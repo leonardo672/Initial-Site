@@ -1,0 +1,231 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f5f5f5; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    text-align: center; /* Center align text and contents */
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    background-color: #2c3e50; /* Dark background color for header */
+    color: white; /* White text color */
+}
+
+header .symbol-container {
+    margin-bottom: 10px; /* Space below the symbol */
+}
+
+header .esoteric-symbol {
+    max-width: 80px; /* Adjust size of the symbol */
+    height: auto;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline; /* Display list items in a row */
+    margin: 0 10px; /* Space between items */
+}
+
+nav ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    justify-content: center; /* Center align main content */
+    padding: 40px 20px;
+}
+
+article {
+    background-color: white; /* White background for article */
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit the width of the article */
+    width: 100%;
+}
+
+/* Title, Subtitle, and Section Styles */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;/* Gray color for subtitle */
+    text-align: center; /* Center align the subtitle */
+    margin-bottom: 20px;
+}
+
+.section {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+
+    text-align: center; /* Center align the section */
+}
+
+/* Paragraph Styles */
+p {
+    text-align: justify; /* Justify text for better readability */
+    margin-bottom: 0;
+    margin:0;
+    font-family: 'Times New Roman', Times, serif; /* Set the font family */
+    font-size: 18px; /* Set the font size to 12px */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; /* Dark blue-gray background */
+    font-size: 18px;
+    color: #ecf0f1; /* Light gray-white text */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Allow absolute positioning within the footer */
+    text-align: center; /* Center text for the nav links */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Set font size */
+    position: absolute; /* Absolute positioning for left alignment */
+    left: 20px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
+}
+
+footer nav {
+    width: 100%; /* Ensure the nav takes full width */
+    top: 0px;
+    margin-top: 0px; /* Space between the copyright and the nav */
+}
+
+footer nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items horizontally */
+}
+
+footer nav ul li {
+    margin: 0 15px; /* Spacing between links */
+}
+
+footer nav ul li a {
+    color: #ecf0f1; /* Light gray-white for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+footer nav ul li a:hover {
+    color: #ecf0f1; /* Red color on hover */
+}
+.article-details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.article-details:hover {
+    border-color: #0066cc;
+    background-color: #e6f2ff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles */
+.article-details h2 {
+    margin-top: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.article-details h2:hover {
+    color: #0066cc;
+}
+
+/* Subtitle styles */
+.article-details .subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Paragraph styles */
+.article-details p {
+    margin: 5px 0;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.article-details p:hover {
+    color: #333;
+}
+
+/* Link styles */
+.article-details a {
+    color: #476e95;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.article-details a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Image styles */
+.article-details img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.article-details img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .article-details {
+        padding: 15px;
+    }
+    .article-details img {
+        max-width: 100%;
+    }
+}

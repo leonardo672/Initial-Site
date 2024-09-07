@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="symbol-container">
+            <img src="Subject.png" alt="Esoteric Symbol" class="esoteric-symbol">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'ru,ar'
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </header>
+    <style>
+/* General Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f5f5f5; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    text-align: center; /* Center align text and contents */
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    background-color: #2c3e50; /* Dark background color for header */
+    color: white; /* White text color */
+}
+
+header .symbol-container {
+    margin-bottom: 10px; /* Space below the symbol */
+}
+
+header .esoteric-symbol {
+    max-width: 80px; /* Adjust size of the symbol */
+    height: auto;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline; /* Display list items in a row */
+    margin: 0 10px; /* Space between items */
+}
+
+nav ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    justify-content: center; /* Center align main content */
+    padding: 40px 20px;
+}
+
+article {
+    background-color: white; /* White background for article */
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit the width of the article */
+    width: 100%;
+}
+
+/* Title, Subtitle, and Section Styles */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;/* Gray color for subtitle */
+    text-align: center; /* Center align the subtitle */
+    margin-bottom: 20px;
+}
+
+.section {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+
+    text-align: center; /* Center align the section */
+}
+
+/* Paragraph Styles */
+p {
+    text-align: justify; /* Justify text for better readability */
+    margin-bottom: 0;
+    margin:0;
+    font-family: 'Times New Roman', Times, serif; /* Set the font family */
+    font-size: 18px; /* Set the font size to 12px */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; /* Dark blue-gray background */
+    font-size: 18px;
+    color: #ecf0f1; /* Light gray-white text */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Allow absolute positioning within the footer */
+    text-align: center; /* Center text for the nav links */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Set font size */
+    position: absolute; /* Absolute positioning for left alignment */
+    left: 20px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
+}
+
+footer nav {
+    width: 100%; /* Ensure the nav takes full width */
+    top: 0px;
+    margin-top: 0px; /* Space between the copyright and the nav */
+}
+
+footer nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items horizontally */
+}
+
+footer nav ul li {
+    margin: 0 15px; /* Spacing between links */
+}
+
+footer nav ul li a {
+    color: #ecf0f1; /* Light gray-white for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+footer nav ul li a:hover {
+    color: #ecf0f1; /* Red color on hover */
+}
+
+/* Style for the article details section */
+.article-details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.article-details:hover {
+    border-color: #0066cc;
+    background-color: #e6f2ff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles */
+.article-details h2 {
+    margin-top: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.article-details h2:hover {
+    color: #0066cc;
+}
+
+/* Subtitle styles */
+.article-details .subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Paragraph styles */
+.article-details p {
+    margin: 5px 0;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.article-details p:hover {
+    color: #333;
+}
+
+/* Link styles */
+.article-details a {
+    color: #476e95;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.article-details a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Image styles */
+.article-details img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.article-details img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .article-details {
+        padding: 15px;
+    }
+    .article-details img {
+        max-width: 100%;
+    }
+}
+
+    </style>
+
+    <main>
+        <article>
+
+
+
+            
+            <div class="title">A SPECIAL DECONSTRUCTION OF THE ONTOLOGICAL STRUCTURE OF THE REALITY INFORMATION SYSTEM PROGRAM</div>
+            <div class="subtitle">PART ONE: MONITORING DEEP STATES OF REALITY AND DISSECTING THE COMPLEX INFORMATIONAL IMPACT ON THE COLLECTIVE HUMAN UNCONSCIOUS</div>
+            <div class="section">1.1. A PRELUDE TO A VARIOUS MYSTICAL VISION</div>
+            <br>
+            <p>It is not only religious systems and beliefs that take over a large part of our absurd and superficial human life and traditions, rather, there is a much greater doctrine that takes over us completely and controls the system of our existence and our mental vision intertwined with the complexities of the relative outside world, it is without a doubt the doctrine of information system which is intersect and weaves certain vibrations and levels of energy onto our human mind and it is essentially formed the external reality in a complex way that relies on its own programming.</p>
+            <p>We are somehow subject to that part that we cannot perceive and our relative consciousness cannot comprehend its upper field that transcends our biocompatible human sphere, and our human sphere, subject to a certain biological, chemical and physical coordination, has contributed to the disruption of the inner, open borders of the human self. We and others in this world interact with super-programmed information system in forms that we cannot truly absorb at the moment as a result of our low level of human consciousness and our low level of perception in dealing with the depths of reality and our view of the depths of reality.</p>
+            <p>We are dealing with this information system without realizing that we are dealing with, and we are unable to comprehend the possibility that this system we are dealing with and to which we are essentially subject is subject to superior overhead programming that we cannot perceive and analyses within the level of limitations of human consciousness associated with the earth reality system, and within this information system the whole system of data were stored. This information system is represented by the system of the universe, and there are broad lines that form the basis of this accurate information system whose effects flow through all parts of reality, and thus its effects flow through all parts of our human life system.</p>
+            <p>The total information system to which we are subject has contributed to grafting the human mind and moving its perception vision through time and ages, until this system contributed to creating an evolutionary cycle exacerbated by its successive consequences on the mind until this cycle worked on creating an integrated programming for a real world that exists in the belief of the human mind. More clearly, that information system which created us and flowing through us creates a specific real world that we interact with, in other words, the deep basic real world does not exist in the way imagined by our human mind which is subject to that programmed level and is highly influenced by this information system that controls the parts of our existence and which that contributed to reflected our vision to create us certain relativistic stereotype in our mind, and thus we have a mental vision that is truncated and fragmented at the same time, and it is not total and not completely true, but only in a relative way in which it contradicts the deep inner reality of the ontological structure in which we are present.</p>
+            <p>The human race in general tends and walks within a stereotypical programmed cycle that is not free from its constraints, that is, we are walking but not completely consciously in this reality as if we are heading in an absurd manner to make the absurd meaning of the things and meanings around us and we ourselves are possessed by that system that disrupts our deep inner vision of deep inner existential reality. Our real system, which is basically not the real deep reality system, is a very thorny information system that cannot be absorbed in a real and deep way, as many people thought, because it basically represents part of the total ontological system subject to pre-programming determined by a higher field based on creation and innovation that exists behind the structure of our existential system and therefore behind our cosmic order.</p>
+            <p>Information formed the existential program for human life subject to its closed restrictions, what humanity has done since ancient times is to exploit reality to invest information that contributed in one way or another to building a specific system that determined the directions of human consciousness that became subject to that illusory relative cycle through which we lived and live our trivial life on earth. The invention of writing since ancient times and what the ancient texts provided give a real dimension for us as human beings to the sequence of human informational reality and its successive and conflicting impact on us.</p>
+            <p>And step by step, we had make up a specific information program on the ground level that works to cover and analyses things and creatures according to its specific human-created coordination, that is, a specific information program that does not cover what must be covered on the deep realistic level and does not look through the level that must be looked through, which is the level outside the normal relative range of human consciousness, but it's only suffices for specific relative explanations in the structure of the external reality. Thus, our mental vision program that was directed by that information system controls our real human movement and directs our consciousness within superficial areas that deal with the crusts of reality and contradict with the deep inner essence that must be looked through in this reality, as if we have completely unreal roots that we cannot cut out, as they take over our unconscious frequency field, which includes the psychological field of the subconscious of the self.</p>
+            <p>There are many esoteric and inner matters and ideas that emerged in ancient times on earth and were hidden in our present time, looking through the depths of ancient times and through the dimensions of the pagan esoteric nature is extremely important, in addition to keep our connection with the reality of the technological movement in which we live, there is nothing clear in this world... everything goes vaguely, even if you feel otherwise, o human being stuck in the shadow of the illusory system, you are inevitably wrong because you are subject to that illusory system that includes your vision system that programmed at what it is, which (vision or perception system programmed) attacks every thought or mind or logic opposing it even if for its absent interest within the illusory system itself, it is as if the mind has become like a closed machine defined by its own programming and forgotten that it possesses a deep and super inner consciousness known as human consciousness that has been removed and locking its real influence away from our reality through dilated processes that affected and affecting the human mind through times and ages on earth.</p>
+            <p>The religious system with its various pluralities and models, the political system with its various pluralities and models, and even the modern materialistic scientific system in itself have all become, intentionally or unintentionally, working to subject the human mind to a reductive and impoverished programmatic system that lacks its true powers... and thus we are gradually moving away from the deep points and lines of the true reality and the truth itself. Ancient ages or times have been referred previously in this context for a reason indicate to differences in perceptions mental orientations of the humans between ages and times, because perceptions mental orientations of the humans is main thing in our various orientation here. What existed in that times and what was written in their civilizations many of it may contradicts the belief of humans who live within their current closed mental limits... that is, within the limits of the political, religious, scientific, and materialistic system that dominates the current reality of human society. The existence information system has the utmost precision that the mind cannot imagine and this precision determined within parts of the mind working system and the theatre of the human subconscious.</p>
+            <img src="1.png" alt="Descriptive Alt Text" style="width:250px; margin:20px auto; display:block;">
+
+            <div class="article-details">
+
+                <p><strong> Publication: </strong> Education And Epoch, The Monography (with international participation), The Book 23, Voronezh - Moscow 2021
+                    2021-12-31 | Magazine article  </p>
+                <p><strong>URL:</strong> <a href="https://cloud.mail.ru/public/1k6R/ngJcLHgds" target="_blank">https://cloud.mail.ru/public/1k6R/ngJcLHgds</a></p>
+                <p><strong>Contributors:</strong> Homam AL Safadi (Writing - original draft, 0009-0008-7498-0925) &copy; Хомам Ал Сафади </p>
+                <p><strong>Country / Location of publication:</strong> Russia</p>
+             
+            </div>
+            
+        </article>
+
+       
+
+    </main>
+    <footer>
+        <p>&copy; Хомам Ал Сафади </p>
+        <nav>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
